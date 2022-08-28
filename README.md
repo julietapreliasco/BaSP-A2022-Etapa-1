@@ -6,5 +6,5 @@
 
 ### Week 01:
 - HTML index file created.
-- 
+
 _By Julieta Preliasco Benítez_
