@@ -5,6 +5,6 @@
 - 2- open the file "index.html" on your browser.
 
 ### Week 01:
-- HTML index file created.
+- HTML index file created based on screenflow made with Figma.
 
 _By Julieta Preliasco Benítez_
