@@ -7,4 +7,7 @@
 ### Week 01:
 - HTML index file created based on screenflow made with Figma.
 
+### Week 02:
+- Style added with CSS.
+
 _By Julieta Preliasco Benítez_
