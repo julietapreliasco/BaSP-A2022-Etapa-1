@@ -1,0 +1,124 @@
+body {
+  line-height: 18px;
+  font-family: 'Roboto', sans-serif;
+}
+
+i {
+  margin-right: 7px;
+}
+
+aside {
+  width: 325px;
+  height: 982px;
+  color: white;
+  background-color: #373867;
+}
+
+
+aside input {
+  margin-left: 20px;
+  margin-top: 30px;
+  width: 260px;
+  height: 38px;
+  border: white;
+  border-radius: 5px;
+}
+
+aside ul {
+  list-style: none;
+  font-size: 20px;
+}
+
+
+aside a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+aside li {
+  margin-top: 35px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid rgb(255, 255, 255, 0.03);
+}
+
+.aside-content {
+  margin-left: 20px;
+  padding-top: 76px;
+}
+
+.clr {
+  clear: both;
+}
+
+.p-menu {
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgb(255, 255, 255, 0.03);
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.get-in-touch {
+  margin-top: 78px;
+  
+}
+
+.get-in-touch p:nth-of-type(1) {
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgb(255, 255, 255, 0.03);
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.get-in-touch p:nth-of-type(2) {
+  width: 258px;
+  height: 97px;
+  padding-top: 34px;
+  font-size: 16px;
+  font-weight: lighter;
+  text-transform: none;
+}
+
+.paragraph {
+  font-size: 16px;
+  font-weight: lighter;
+  text-transform:lowercase;
+}
+
+.navbar {
+  width: 1187px;
+  height: 108px;
+  float: right;
+  background-color: #373867;
+}
+
+.navbar a {
+  color: white;
+  font-size: 24;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.navbar ul {
+  padding: 0;
+  float: right;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar i {
+  margin-top: 45px;
+  padding-right: 16px;
+  color: white;
+
+}
+
+.navbar-div {
+  margin-right: 47px;
+  margin-left: 32.97px;
+  border-bottom: 1px solid white;
+}
