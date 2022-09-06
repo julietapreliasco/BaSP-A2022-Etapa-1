@@ -19,7 +19,8 @@ span {
 }
 
 header {
-  position: sticky;
+  position: fixed;
+  z-index: 0;
 }
 
 aside {
@@ -28,13 +29,16 @@ aside {
   color: white;
   background-color: #373867;
   position: fixed;
+  top: 0;
 }
 
 main {
-  position: relative;
-  top: 105px; 
-  margin-left: 330px;
+  margin-left: 340px;
+  z-index: 0;
+  margin: 7% 0 0 23%;
+  min-height: 100%;
 }
+
 
 aside input {
   margin-left: 20px;
@@ -72,10 +76,6 @@ aside li {
 .aside-content {
   margin-left: 20px;
   padding-top: 45px;
-}
-
-.clr {
-  clear: both;
 }
 
 .p-menu {
@@ -118,40 +118,42 @@ aside li {
 }
 
 .navbar {
+  position: fixed;
   width: 100%;
   height: 108px;
-  float: right;
   background-color: #373867;
+  top: 0;
+  z-index: 1;
 }
 
 .navbar a {
   color: white;
-  font-size: 24px;
+  font-size: 16px;
   text-decoration: none;
+  margin-left: 16px;
 }
 
 .navbar ul {
   padding: 0;
   float: right;
+  margin-top: 47px;
 }
 
 .navbar li {
   display: inline;
 }
 
-.navbar i {
-  margin-top: 45px;
-  padding-right: 16px;
-  color: white;
+.index-icon {
+  margin-top: 40px;
+  color: #FFFFFF;
 }
 
-.navbar-div {
-  background-color: rgb(255, 255, 255);
-  margin-right: 47px;
-  margin-left: 32.97px;
-  border-top: 1px solid white;
+.nav-bar {
+  border-bottom: 1px solid white;
+  height: 80px;
+  margin-right: 2%;
+  margin-left: 23%;
 }
-
 
 .presentation {
   height: 850px;
@@ -167,14 +169,13 @@ aside li {
 .presentation-text {
   width: 576px;
   height: 347px;
-  padding-top: 115px;
+  padding-top: 197px;
 }
 
 .presentation-image {
-  margin-right: 82px;
-  margin-top: 211px;
+  padding-right: 82px;
+  padding-top: 107px;
 }
-
 
 .presentation h1 {
   width: 435px;
@@ -206,11 +207,9 @@ aside li {
 .presentation a {
   width: 100px;
   height: 20px;
-  margin-left: 500px;
   float: right;
   margin-top: 110px;
   margin-right: 405px;
-  background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   font-weight: 500;
@@ -220,6 +219,7 @@ aside li {
   padding-top: 5px;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.5);
+  text-transform: none;
 }
 
 .functionalities {
@@ -244,7 +244,6 @@ aside li {
 }
 
 .functionalities div {
-  width: 95%;
   line-height: 23px;
 }
 
@@ -255,7 +254,6 @@ aside li {
 }
 
 .functionalities h2 {
-  display: inline-block;
   margin-bottom: 80px;
   font-size: 28px;
   font-weight: 400;
@@ -553,5 +551,176 @@ aside li {
 .our-history-image {
   padding-top: 25px;
   margin-left: 725px;
-  
+}
+
+/* footer */
+/*
+.footer {
+  background-color: #DFDFDF;
+  text-align: center;
+  height: 700px;
+  margin-left: 21%;
+}
+
+.div-footer {
+  display: inline-block;
+  margin-bottom: 200px;
+  width: 20%;
+  margin-left: 10px;
+}
+
+.footer-title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  font-variant: small-caps;
+  color: #000000;
+  float: left;
+  margin-top: 100px;
+}
+
+.products, .business, .support {
+  margin-top: 100px;
+  float: right;
+} 
+
+.products h4, .business h4, .support h4 {
+  font-weight: 400;
+  line-height: 23px;
+  font-size: 20px;
+  line-height: 23px;
+  font-variant: small-caps;
+  margin-bottom: 14px;
+  text-align: start;
+} 
+
+.products ol, .business ol, .support ol {
+  text-align: start;
+}
+
+.products li, .business li, .support li {
+  list-style-type: decimal;
+}
+
+.socials a {
+  font-size: 28px;
+  color: #000000;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.socials p {
+  float: right;
+}
+
+.socials ul {
+  padding: 0;
+  margin-top: 47px;
+}
+
+.socials li {
+  display: inline;
+}
+
+*/
+
+footer {
+  height: 700px;
+  margin-left: 324px;
+  background-color: rgba(151, 151, 151, 0.39);
+}
+
+.line-footer {
+  border-top: 2px solid rgba(0, 0, 0, 0.12);
+  position: absolute;
+  margin-top: 33px;
+  width: 1129px;
+  margin-left: 30px;
+}
+
+
+.div-1 {
+  height: 350px;
+  display: block;
+  text-align: start;
+}
+
+.title-footer, .products, .business, .support {
+  height: 100px;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.title-footer {
+  margin-top: 100px;
+  margin-left: 59px;
+  margin-right: 360px;
+  float: left;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 38px;
+}
+
+.products, .business, .support {
+  margin-top: 98px;
+  margin-right: 66px;
+}
+
+.products h4, .business h4, .support h4 {
+  font-weight: 500;
+  line-height: 23px;
+  font-size: 18px;
+  line-height: 23px;
+  font-variant: small-caps;
+  margin-bottom: 14px;
+  text-align: start;
+} 
+
+.products ol, .business ol, .support ol {
+  list-style-type: decimal;
+  text-align: start;
+}
+
+.products li, .business li, .support li {
+  padding-left: 10px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.div-2 {
+  height: 230px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+  margin: 0 30px 0 30px;
+}
+
+
+.div-2 a {
+  font-size: 28px;
+  color: #000000;
+  text-decoration: none;
+}
+
+.div-2 div {
+  display: block;
+}
+
+.div-2 ul {
+  float: right;
+  margin-top: 190px;
+  margin-right: -8px;
+
+}
+
+.div-2 li {
+  display: inline-block;
+}
+
+.div-2 p {
+  float: left;
+  margin-top: 190px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  font-variant: small-caps;
 }
