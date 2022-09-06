@@ -1,6 +1,7 @@
 body {
   line-height: 18px;
   font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
 }
 
 i {
@@ -11,7 +12,6 @@ h1 {
   margin-left: 100px;
   font-size: 32px;
   font-weight: 500;
-  text-transform: uppercase;
 }
 
 span {
@@ -24,7 +24,7 @@ header {
 
 aside {
   width: 325px;
-  height: 892px;
+  height: 982px;
   color: white;
   background-color: #373867;
   position: fixed;
@@ -49,13 +49,13 @@ aside input {
 aside ul {
   list-style: none;
   font-size: 20px;
+  text-transform: none;
 }
 
 
 aside a {
   color: white;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 aside li {
@@ -84,7 +84,6 @@ aside li {
   border-bottom: 2px solid rgb(255, 255, 255, 0.03);
   font-size: 24px;
   font-weight: bold;
-  text-transform: uppercase;
 }
 
 .get-in-touch {
@@ -96,7 +95,6 @@ aside li {
   border-bottom: 2px solid rgb(255, 255, 255, 0.03);
   font-size: 24px;
   font-weight: bold;
-  text-transform: uppercase;
 }
 
 .get-in-touch p:nth-of-type(2) {
@@ -130,7 +128,6 @@ aside li {
   color: white;
   font-size: 24px;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 .navbar ul {
@@ -185,7 +182,6 @@ aside li {
   margin-bottom: 30px;
   font-size: 32px;
   font-weight: 500;
-  text-transform: uppercase;
 }
 
 .presentation p {
@@ -195,7 +191,6 @@ aside li {
   font-weight: 400;
   font-size: 20px;
   line-height: 23px;
-  text-transform: uppercase;
   color: rgba(0, 0, 0, 0.5);
 }
 
@@ -234,15 +229,15 @@ aside li {
 }
 
 .functionalities p {
-  width: 550px;
+  width: 560px;
   height: 137px;
   font-size: 18px;
   line-height: 23px;
-  text-transform: uppercase;
   color: rgba(0, 0, 0, 0.7);
 }
 
 .functionalities img {
+  width: 200px;
   float: left;
   padding-right: 25px;
   padding-left: 35px;
@@ -261,12 +256,11 @@ aside li {
 
 .functionalities h2 {
   display: inline-block;
-  margin-bottom: 50px;
-  font-size: 32px;
-  font-weight: 450;
+  margin-bottom: 80px;
+  font-size: 28px;
+  font-weight: 400;
+  margin-left: 40px;
 }
-
-/* why trackgenix section */
 
 .why-trackgenix {
   height: 1000px;
@@ -300,15 +294,14 @@ aside li {
   font-weight: 400;
   font-size: 20px;
   line-height: 23px;
-  text-transform: uppercase;
 }
 
 .first-section-why h2 {
-  margin-left: 80px;
+  margin-left: 70px;
   margin-top: 350px;
   font-size: 20px;
   width: 100px;
-  font-size: 32px;
+  font-size: 28px;
   line-height: 37.5px;
   font-weight: 400;
 }
@@ -331,7 +324,6 @@ aside li {
   font-weight: 400;
   font-size: 18px;
   line-height: 23.44px;
-  text-transform: uppercase;
   color: rgba(0, 0, 0, 0.7);
 }
 
@@ -349,7 +341,6 @@ aside li {
   color: rgb(0, 0, 0, 0.7);
   font-size: 20px;
   font-weight: 400;
-  text-transform: uppercase;
   line-height: 23px;
   text-align: center;
   margin-left: 100px;
@@ -378,10 +369,9 @@ aside li {
   height: 44px;
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 30px;
   line-height: 38px;
   color: #000000;
-  text-transform: uppercase;
   border-bottom: 2px solid rgba(0, 0, 0, 0.12);;
 }
 
@@ -435,13 +425,11 @@ aside li {
   
 }
 
-
 .first-section-message h2 {
   width: 500px;
   padding-left: 23px;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 400;
-  text-transform: uppercase;
   line-height: 38px;
   margin-top: 150px;
   margin-bottom: 27px;
@@ -463,4 +451,107 @@ aside li {
 
 .img-3 {
   margin-bottom: 55px;
+}
+
+.about-us-section {
+  padding-top: 100px;
+  height: 900px;
+  padding-left: 30px;
+  padding-right: 40px;
+  width: 80%;
+}
+
+.about-us-section h2 {
+  width: 435px;
+  height: 44px;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 38px;
+  color: #000000;
+
+}
+
+.about-us-section div {
+  display: block;
+  width: 49%;
+}
+
+.our-mission {
+  padding-bottom: 5px;
+}
+
+.our-mission div {
+  display: inline-block;
+}
+
+.our-mission-text {
+  float: right;
+}
+
+.our-mission-text p {
+  margin-left: 170px;
+  width: 680px;
+  height: 92px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: rgba(0, 0, 0, 0.7);
+  padding-top: 30px;
+  text-align: justify;
+}
+
+.our-mission-text h3 {
+  padding-bottom: 15px;
+  margin-top: 35px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+  margin-left: 170px;
+  width: 670px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.our-mission-image {
+  padding-top: 25px;
+}
+
+.our-history div {
+  display: inline-block;
+}
+
+.our-history-text {
+  float: left;
+  margin-top: -270px;
+}
+
+.our-history-text p {
+  float: left;
+  margin-right: 170px;
+  width: 680px;
+  height: 92px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: rgba(0, 0, 0, 0.7);
+  padding-top: 30px;
+  text-align: justify;
+}
+
+.our-history-text h3 {
+  padding-bottom: 15px;
+  margin-top: 35px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+  margin-right: 170px;
+  width: 670px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.our-history-image {
+  padding-top: 25px;
+  margin-left: 725px;
+  
 }
