@@ -15,7 +15,7 @@
 <body>
   <header>
     <nav class="navbar">
-      <section class="nav-bar">
+      <div class="navbar-line">
         <i class="fa-solid fa-bars index-icon"></i>
         <a href="#">Trackgenix</a>
         <ul>
@@ -32,34 +32,13 @@
             <a href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
           </li>
         </ul>
-      </section>
+      </div>
     </nav>
   </header>
-  <!-- <header>
-    <nav class="navbar">
-      <div class="navbar-div"></div>
-        <a href="#">Trackgenix</a>
-        <ul>
-          <li>
-            <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-          </li>
-          <li>
-            <a href="https://es-la.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-          </li>
-          <li>
-            <a href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-          </li>
-        </ul>
-        <div class="clr"></div>
-    </nav>
-  </header> -->
 	<aside>
       <input type="search" placeholder="Search"/>
       <div class="aside-content">
-        <p class="p-menu">Menu</p>
+        <p class="menu">Menu</p>
           <ul>
             <li><a href="#" target="_blank">Home</a></li>
             <li><a href="#" target="_blank">Sign in</a></li>
@@ -82,7 +61,7 @@
     </div>
 	</aside>
 	<main>
-		<div class="presentation">
+		<section class="presentation">
       <div class="presentation-text">
         <h1>Trackgenix</h1>
         <p>
@@ -97,7 +76,7 @@
       <div class="presentation-image">
         <img src="assets/image-landing.jpg" alt="Landing image"/>
       </div>
-		</div>
+		</section>
     <section class="functionalities">
       <h2>Fuctionalities</h2>
 			<div>
@@ -145,7 +124,7 @@
 			</div>
 		</section>
 		<section class="why-trackgenix">
-			<div class="first-section-why">
+			<div class="why-trackgenix-container">
         <div>
           <img src="assets/why-trackgenix.png" alt="Why use trackgenix"/>
         </div>
@@ -222,14 +201,21 @@
 						<label for="email">Email: </label>
 						<input type="email" name="email"/>
 					</div>
-					<div>
-						<label for="area">Select an area: </label>
-						<select name="area">
-								<option value="hr">Human resources</option>
-								<option value="systems">Systems</option>
-								<option value="business">Business</option>
-						</select>
-					</div>
+					<div class="areas">
+            <p>Select an area:</p>
+            <label>
+              <input type="radio" name="contact-area" value="Human resources" checked/>
+              <p>Human resources</p>
+            </label>
+            <label>
+              <input type="radio" name="contact-area" value="Systems"/>
+              <p>Systems</p>
+            </label>
+            <label>
+              <input type="radio" name="contact-area" value="Commercialization" />
+              <p>Commercialization</p>
+            </label>
+          </div>
 					<div>
 						<label for="message">Message: </label>
 						<textarea name="message" id="" cols="30" rows="10"></textarea>
@@ -271,7 +257,7 @@
 	</main>
 	<footer class="footer">
     <div class="line-footer"></div>
-    <div class="div-1">
+    <div class="first-container-footer">
       <div class="title-footer">
         <h3 class="div-footer footer-title">Trackgenix</h3>         
       </div>
@@ -303,7 +289,7 @@
         </ol>               
       </div>
     </div>
-    <div class="div-2">
+    <div class="second-container-footer">
       <div>
         <ul>
           <li>
@@ -327,60 +313,6 @@
         <p>© 2022, GIGATECH SOFTWARE SOLUTIONS</p>
       </div>
     </div>
-    <!--
-    <div>
-      <h3 class="div-footer footer-title">Trackgenix</h3>
-      <div class="div-footer products">
-        <h4>Products</h4>
-        <ol>
-          <li>Functionalities</li>
-          <li>Downloads</li>
-          <li>Integrations</li>
-          <li>Additional features</li>
-        </ol>
-      </div>
-      <div class="div-footer business">
-        <h4>Business</h4>
-        <ol>
-          <li>About us</li>
-          <li>Customers</li>
-          <li>Resources</li>
-          <li>Blog</li>
-        </ol>
-      </div>
-      <div class="div-footer support">
-        <h4>Support</h4>
-        <ol>
-          <li>Help</li>
-          <li>Tutorials</li>
-          <li>API</li>
-          <li>Contact</li>
-        </ol>
-      </div>
-    </div>
-    <div>
-      <div class="socials">
-        <ul>
-          <li>
-            <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter footer-icons"></i></a>
-          </li>
-          <li>
-            <a href="https://es-la.facebook.com/" target="_blank"><i class="fa-brands fa-facebook  footer-icons"></i></a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram  footer-icons"></i></a>
-          </li>
-          <li>
-            <a href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin  footer-icons"></i></a>
-          </li>
-          <li>
-            <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github  footer-icons"></i></a>
-          </li>
-        </ul>
-      </div>
-      <p>© 2022, GIGATECH SOFTWARE SOLUTIONS</p>
-    </div>
-    -->
 	</footer>
 </body>
 </html>
