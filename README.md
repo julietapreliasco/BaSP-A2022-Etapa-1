@@ -10,4 +10,7 @@
 ### Week 02:
 - Style added with CSS based on html structure from last week.
 
+### Week 03:
+- Stylesheet updated with Flexbox for a more responsive design.
+
 _By Julieta Preliasco Benítez_
