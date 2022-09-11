@@ -1,0 +1,29 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  line-height: 18px;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+span {
+  font-weight: 700;
+}
+
+section {
+  margin-bottom: 50%;
+}
+
+p {
+  color: rgb(0, 0, 0, 0.7);
+  font-size: 20px;
+  line-height: 23px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 500;
+}
