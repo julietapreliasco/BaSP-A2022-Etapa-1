@@ -78,3 +78,46 @@
   text-decoration: none;
   font-size: 20px;
 }
+
+@media (min-width: 1024px) {
+  footer {
+    margin-left: 300px;
+  }
+
+  .footer h3 {
+    width: 100%;
+    margin-top: 5%;
+    align-self: flex-start;
+    padding: 0;
+    padding-top: 5%;
+    padding-left: 3%;
+    border-top: 2px solid rgba(0, 0, 0, 0.12);;
+    border-bottom: none;
+  }
+
+  .first-container-footer {
+    flex-direction: row;
+    height: 0;
+    justify-content: flex-end;
+    padding: 5%;
+  }
+
+  .products, .business, .support {
+    padding: 2%;
+  }
+
+  .second-container-footer {
+    width: 100%;
+    height: 45%;
+    margin: 0;
+    padding-top: 7%
+  }
+
+  .second-container-footer ul {
+    justify-content: flex-end;
+  }
+
+  .footer-icons {
+    padding: 5px;
+  }
+}

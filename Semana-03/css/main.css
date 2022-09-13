@@ -81,7 +81,7 @@
 
 .functionalities-box article:nth-child(odd) img{
   padding-left: 25px;
-  }
+}
 
 .why-trackgenix {
   display: flex;
@@ -91,12 +91,12 @@
   border-bottom: 2px solid #383768;
 }
 
-.why-trackgenix div {
+/* .why-trackgenix div {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 90%;
-}
+} */
 
 .why-trackgenix-container {
   display: flex;
@@ -330,21 +330,49 @@
 
   .presentation h1 {
     border: none;
-    align-self: center;
+    align-self: flex-end;
+    font-size: 32px;
+    text-transform: uppercase;
   }
 
-  .functionalities-box {
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 2%;
-
-    background-color: white;
+  .presentation img {
+    padding: 0;
   }
 
+  .presentation-text p {
+    font-size: 20px;
+    margin-top: 0px;
+  }
+
+  .presentation a {
+    align-self: flex-start;
+    margin-left: 20%;
+  }
+  
   .functionalities h2 {
     display: flex;
     margin-bottom: 5%;
     margin-left: 8%;
+    font-size: 32px;
+  }
+  
+  .functionalities-box {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 2%;
+    
+    background-color: white;
+  }
+  
+  .functionalities-box img {
+    width: 50%;
+    height: 50%;
+  }
+
+  .functionalities-box p {
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 23.44px;
   }
   
   .functionalities-box article {
@@ -352,6 +380,10 @@
     padding: 0%;
     margin-left: 5%;
     height: 300px;
+  }
+
+  .functionalities-box article:nth-child(odd) img{
+    padding-right: 25px;
   }
 
   .functionalities-box article:nth-child(3), .functionalities article:nth-child(1){
@@ -363,8 +395,36 @@
     border-bottom: none;
   }
 
+  .why-trackgenix p {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
   .why-trackgenix-container {
+    display: flex;
     border-bottom: none;
+    flex-direction: row;
+    margin: 3%;
+    border-right: 2px solid #C4C4C4;
+    height: 700px;
+  }
+
+  .why-trackgenix-container h2 {
+    padding-left: 2%;
+  }
+
+  .why-trackgenix-articles {
+    width: 70%;
+  }
+
+  .why-trackgenix article img {
+    margin-right: 2%;
+  }
+
+  .why-trackgenix article:nth-child(3), article:nth-child(1){
+    flex-direction: row;
   }
   
   .message-section {
@@ -415,4 +475,41 @@
     width: 15%;
   }
 
+  .about-us-section h2 {
+    justify-content: flex-start;
+    font-size: 32px;
+    padding-left: 12%;
+    padding-bottom: 3%;
+  }
+
+  .our-mission-text h3 {
+    align-self: flex-start;
+    padding-left: 15%;
+    width: 90%;
+  }
+
+  .our-history, .our-mission {
+    justify-content: center;
+  }
+
+  .our-history {
+    margin-top: 10%;
+  }
+
+  .our-history img, .our-mission img {
+    width: 25%;
+  }
+
+  .our-history-text, .our-mission-text {
+    justify-content: space-evenly;
+  }
+
+  .our-history-text h3, .our-mission-text h3 {
+    font-size: 20px;
+    line-height: 28.13px;
+  }
+
+  .our-history-text p, .our-mission-text p {
+    text-transform: uppercase;
+  }
 }
