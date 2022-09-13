@@ -1,0 +1,131 @@
+aside {
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  width: 300px;
+  height: 100%;
+  bottom: 0;
+  top: 0;
+  background-color: #373867;
+}
+
+aside input {
+  align-self: center;
+  width: 82%;
+  height: 5%;
+  margin-top: 6%;
+  background-color: #373867;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+aside ul {
+  list-style: none;
+  font-size: 20px;
+}
+
+aside a {
+  color: white;
+}
+
+.aside-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 30%;
+  padding: 8%;
+}
+
+.menu p {
+  width: 100%;
+  margin-bottom: 15%;
+  border-bottom: 2px solid rgb(255, 255, 255, 0.03);
+  color: white;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.13px;
+}
+
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  height: 200px;
+}
+
+.menu li {
+  width: 100%;
+  padding-bottom: 5%;
+  border-bottom: 2px solid rgb(255, 255, 255, 0.03);
+}
+
+.get-in-touch {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  height: 50%;
+  padding: 8%;
+}
+
+.get-in-touch p:nth-of-type(1) {
+  width: 100%;
+  padding-bottom: 3%;
+  border-bottom: 2px solid rgb(255, 255, 255, 0.03);
+  color: white;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.get-in-touch li {
+  border-bottom: none;
+  text-transform: none;
+  color: white;
+  font-weight: 200;
+}
+
+.get-in-touch p:nth-of-type(2) {
+  color: white;
+  text-transform: none;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 19px;
+}
+
+.get-in-touch li:nth-of-type(1) {
+  text-decoration: underline;
+}
+
+.contact-details {
+  display: flex;
+  height: 50%;
+}
+
+.contact-details ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.contact-details li {
+  display: flex;
+}
+
+.contact-details i {
+  padding: 2%;
+}
+
+@media (min-width: 1024px) {
+  aside {
+    display: flex;
+  }
+}

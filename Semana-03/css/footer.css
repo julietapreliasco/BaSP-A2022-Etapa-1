@@ -14,7 +14,7 @@
   justify-content: space-evenly;
 }
 
-h3 {
+.footer h3 {
   align-self: center;
   padding-top: 10%;
   padding-bottom: 10%;
@@ -41,13 +41,14 @@ h3 {
 }
 
 .second-container-footer {
+  width: 90%;
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-end;
   justify-content: space-between;
   height: 30%;
-  padding-top: 5%;
   padding-bottom: 5%;
+  margin-left: 5%;
   border-bottom: 2px solid rgba(0, 0, 0, 0.12);
 
 }
@@ -66,7 +67,10 @@ h3 {
 }
 
 .second-container-footer ul {
+  width: 100%;
   display: flex;
+  justify-content: space-around;
+  padding-right: 4%;
 }
 
 .second-container-footer a {

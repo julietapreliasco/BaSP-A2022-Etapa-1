@@ -1,20 +1,23 @@
 .presentation {
   display: flex;
   flex-direction: column-reverse;
+  /* flex-wrap: wrap-reverse; */
   justify-content: center;
   margin-top: 0;
+  padding-top: 20%;
 }
 
-.presentation-image {
+.presentation img {
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  padding: 5%;
 }
 
-.presentation-image img {
+/* .presentation-image img {
   width: 100%;
   padding: 20px;
-}
+} */
 
 .presentation-text {
   display: flex;
@@ -42,7 +45,12 @@
 }
 
 .presentation a {
-  display: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 1%;
 }
 
 .functionalities {
@@ -66,7 +74,7 @@
 
 .functionalities article {
   display: flex;
-  padding: 14%;
+  padding: 8%;
 }
 
 .functionalities article:nth-child(3){
@@ -180,6 +188,7 @@
 }
 
 .second-section-message {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -191,19 +200,21 @@
 }
 
 .form {
-  width: 130%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .form div {
   display: flex;
-  width: 100%;
+  justify-content: center;
+  width: 90%;
   flex-direction: column;
-  padding: 5%;
+  margin: 5%;
 }
 
 .form label, p {
+
   align-self: flex-start;
   text-transform: none;
   font-weight: 500;
@@ -215,11 +226,10 @@
   border: 1px solid #000000;
   flex-basis: 37px;
   border-radius: 4px;
-  width: 100%;
 }
 
 .form textarea {
-  width: 100%;
+  width: 90%;
   border: 1px solid #000000;
   border-radius: 4px;
 }
@@ -255,6 +265,13 @@
   justify-content: space-around;
 }
 
+.about-us-section h2 {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10%;
+  width: 100%;
+}
+
 .our-mission {
   display: flex;
 }
@@ -269,12 +286,20 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  justify-content: space-between;
   width: 50%;
+  height: 250px;
 }
 
 .our-mission-text p {
   font-size: 16px;
   padding-left: 15%;
+
+}
+
+.our-mission-text h3, .our-history-text h3 {
+  border-bottom: none;
+  font-size: 18px;
 }
 
 .our-history {
@@ -287,7 +312,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
   width: 50%;
+  height: 280px;
 }
 
 .our-history-text p {
@@ -295,6 +322,12 @@
   padding-right: 15%;
 }
 
-/* .our-mission h3 {
+@media (min-width: 1024px) {
+  main {
+    margin-left: 300px;
+  }
 
-} */
+  .presentation {
+    flex-direction: row;
+  }
+}
