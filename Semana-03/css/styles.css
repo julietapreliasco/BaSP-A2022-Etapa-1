@@ -27,3 +27,9 @@ h1 {
   font-size: 32px;
   font-weight: 500;
 }
+
+@media (min-width: 1024px) {
+  section {
+    margin-top: 20%;
+  }
+}

@@ -48,5 +48,14 @@ header i {
 @media (min-width: 1024px) {
   .nav{
     display: flex;
+    margin-left: 300px;
+  }
+
+  header div:nth-of-type(1) {
+    margin-left: 300px;
+  }
+
+  header i {
+    padding-right: 10%;
   }
 }

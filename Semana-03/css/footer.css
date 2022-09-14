@@ -1,33 +1,33 @@
-.footer {
-  height: 100%;
+footer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  height: 100%;
   margin-top: 50%;
   background-color: #DDDDE5;
 }
 
 .first-container-footer {
   display: flex;
-  height: 30%;
   align-items: center;
   justify-content: space-evenly;
+  height: 30%;
 }
 
-.footer h3 {
+footer h3 {
   align-self: center;
+  width: 90%;
   padding-top: 10%;
   padding-bottom: 10%;
   border-bottom: 2px solid rgba(0, 0, 0, 0.12);
-  width: 90%;
   font-size: 26px;
   line-height: 38px;
 }
 
 .products h4, .business h4, .support h4 {
+  padding-bottom: 10%;
   font-weight: 400;
   font-size: 18px;
-  padding-bottom: 10%;
 }
 
 .products ol, .business ol, .support ol {
@@ -41,14 +41,14 @@
 }
 
 .second-container-footer {
-  width: 90%;
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-end;
   justify-content: space-between;
+  width: 90%;
   height: 30%;
-  padding-bottom: 5%;
   margin-left: 5%;
+  padding-bottom: 5%;
   border-bottom: 2px solid rgba(0, 0, 0, 0.12);
 
 }
@@ -67,9 +67,9 @@
 }
 
 .second-container-footer ul {
-  width: 100%;
   display: flex;
   justify-content: space-around;
+  width: 100%;
   padding-right: 4%;
 }
 
@@ -81,13 +81,14 @@
 
 @media (min-width: 1024px) {
   footer {
+    width: 100%;
+    margin-top: 20%;
     margin-left: 300px;
   }
 
-  .footer h3 {
-    width: 100%;
+  footer h3 {
+    align-self: center;
     margin-top: 5%;
-    align-self: flex-start;
     padding: 0;
     padding-top: 5%;
     padding-left: 3%;
@@ -97,9 +98,9 @@
 
   .first-container-footer {
     flex-direction: row;
-    height: 0;
     justify-content: flex-end;
-    padding: 5%;
+    height: 0;
+    padding: 2%;
   }
 
   .products, .business, .support {
@@ -107,17 +108,22 @@
   }
 
   .second-container-footer {
-    width: 100%;
+    align-self: center;
     height: 45%;
     margin: 0;
-    padding-top: 7%
+    padding-bottom: 2%;
   }
 
   .second-container-footer ul {
     justify-content: flex-end;
   }
 
+  .second-container-footer p {
+    font-size: 16px;
+  }
+
   .footer-icons {
     padding: 5px;
+    font-size: 22px;
   }
 }
