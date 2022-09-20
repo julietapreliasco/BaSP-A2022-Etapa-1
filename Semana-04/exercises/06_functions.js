@@ -74,7 +74,7 @@ function sum3(a, b) {
   }
 }
 
-var result = sum3(10.6, 11.8);
+var result = sum3(10.2, 11.8);
 console.log(result);
 
 

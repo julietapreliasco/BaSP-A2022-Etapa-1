@@ -12,7 +12,7 @@ console.log(num);
 if (num >= 0.5) {
   alert('Greater than 0.5');
 } else {
-  alert('Lower than 0.5');
+    alert('Lower than 0.5');
 }
 
 /* b. Crear una variable “Age” que contenga un número entero entre 0 y 100 y muestre los siguientes mensajes de alerta:
@@ -32,15 +32,15 @@ console.log(age);
 if (age < 2) {
   alert('Bebe');
 } else if (age >= 2 && age <= 12) {
-  alert('Niño');
+    alert('Niño');
 } else if (age >= 13 && age <= 19) {
-  alert('Adolescente');
+    alert('Adolescente');
 } else if (age >= 20 && age <= 30) {
-  alert('Joven');
+    alert('Joven');
 } else if (age >= 31 && age <= 60) {
-  alert('Adulto');
+    alert('Adulto');
 } else if (age >= 61 && age <= 75) {
-  alert('Adulto mayor');
+    alert('Adulto mayor');
 } else {
-  alert('Anciano');
+    alert('Anciano');
 }
