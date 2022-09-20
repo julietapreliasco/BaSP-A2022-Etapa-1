@@ -19,7 +19,6 @@
   justify-content: space-evenly;
   align-items: center;
   text-transform: none;
-  width: 100%;
 }
 
 .presentation-text p {
@@ -54,8 +53,7 @@
 }
 
 .functionalities-box img {
-  width: 100px;
-  height: 100px;
+  height: 150px;
 }
 
 .functionalities-box p {
@@ -80,7 +78,7 @@
 }
 
 .functionalities-box article:nth-child(odd) img{
-  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .why-trackgenix {
@@ -118,7 +116,6 @@
 .why-trackgenix article {
   display: flex;
   text-transform: none;
-  width: 80%;
   padding: 5%;
 }
 
@@ -145,7 +142,6 @@
 }
 
 .first-section-message {
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -183,7 +179,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  min-width: 300px;
 }
 
 .second-section-message h2 {
@@ -233,17 +229,22 @@
 }
 
 .areas label {
+  margin: 2%;
   display: flex;
+  align-self: center;
   width: 70%;
   border: 1px solid #000000;
   border-radius: 5px;
 }
 
 .areas input {
+  flex-basis: 30px;
   accent-color: #373867;
+  margin: 2%;
 }
 
 .areas p:nth-of-type(1) {
+  align-self: center;
   padding-top: 3%;
   text-transform: none;
   font-size: 14px;
@@ -259,12 +260,14 @@
 .about-us-section h2 {
   display: flex;
   justify-content: center;
-  width: 100%;
-  padding-bottom: 5%;
+  margin: 3%;
+  padding-bottom: 3%;
+  border-bottom: 2px solid #C4C4C4;
 }
 
 .our-mission {
   display: flex;
+  padding-top: 2%;
 }
 
 .our-mission img, .our-history img {
@@ -340,12 +343,40 @@
     width: 200px;
     margin-left: 200px;
   }
+
+  .functionalities h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    padding-bottom: 2%;
+  }
+
+  .functionalities-box article:nth-child(odd) img {
+    width: 25%;
+    height: 25%;
+  }
+
+  .functionalities-box article:nth-child(even) img {
+    width: 25%;
+    height: 25%;
+  }
+
+  .functionalities-box p {
+    align-self: center;
+  }
+
+  .second-section-message {
+    min-width: 600px;
+  }
+
+  .form button {
+    width: 15%
+  }
 }
 
 @media screen and (min-width: 1024px) {
   main {
     margin-left: 300px;
-    width: 100%;
   }
 
   .presentation {
@@ -364,6 +395,7 @@
   .presentation img {
     flex: 1;
     padding: 0;
+    margin-right: 5%;
   }
 
   .presentation-text p {
@@ -391,13 +423,7 @@
   .functionalities-box {
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: 10%;
     background-color: white;
-  }
-
-  .functionalities-box img {
-    width: 50%;
-    height: 50%;
   }
 
   .functionalities-box p {
@@ -409,12 +435,7 @@
   .functionalities-box article {
     width: 45%;
     height: auto;
-    margin-left: 5%;
-    padding: 0%;
-  }
-
-  .functionalities-box article:nth-child(odd) img{
-    padding-right: 25px;
+    padding-bottom: 2%;
   }
 
   .functionalities-box article:nth-child(3), .functionalities article:nth-child(1){
@@ -423,7 +444,6 @@
 
   .why-trackgenix {
     flex-direction: row;
-    margin-left: 10%;
     border-bottom: none;
   }
 
@@ -449,6 +469,7 @@
 
   .why-trackgenix-articles {
     width: 70%;
+    margin-right: 5%;
   }
 
   .why-trackgenix article img {
@@ -461,6 +482,7 @@
 
   .message-section {
     flex-direction: row;
+    margin-top: 10%;
   }
 
   .first-section-message {
@@ -507,15 +529,12 @@
     width: 15%;
   }
 
-  .about-us-section {
-    margin-left: 5%;
-  }
-
   .about-us-section h2 {
     justify-content: flex-start;
     padding-left: 12%;
     padding-bottom: 3%;
     font-size: 32px;
+    border-bottom: none;
   }
 
   .our-mission-text h3 {

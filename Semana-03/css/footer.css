@@ -2,7 +2,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: 100%;
+  height: 80%;
   margin-top: 50%;
   background-color: #DDDDE5;
 }
@@ -55,6 +55,8 @@ footer h3 {
 
 .second-container-footer p {
   font-size: 12px;
+  align-self: flex-end;
+  padding-bottom: 0;
 }
 
 .second-container-footer div:nth-child(2) {
@@ -69,7 +71,7 @@ footer h3 {
 .second-container-footer ul {
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  width: 30%;
   padding-right: 4%;
 }
 
@@ -81,7 +83,6 @@ footer h3 {
 
 @media (min-width: 1024px) {
   footer {
-    width: 100%;
     margin-top: 20%;
     margin-left: 300px;
   }
@@ -109,7 +110,7 @@ footer h3 {
 
   .second-container-footer {
     align-self: center;
-    height: 45%;
+    height: 60%;
     margin: 0;
     padding-bottom: 2%;
   }
