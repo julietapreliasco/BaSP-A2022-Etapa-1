@@ -17,7 +17,7 @@ window.onload = function() {
   }
 
   email.onblur = function() {
-    if (validateEmail() == false) {
+    if (!validateEmail()) {
       email.classList.remove('border', 'correct');
       email.classList.add('error');
       emailMessage.style.visibility = 'visible'
@@ -30,17 +30,14 @@ window.onload = function() {
 
   email.onfocus = function() {
     emailMessage.style.visibility = 'hidden'
-    if (validateEmail() == false) {
-      email.value = '';
-    }
-    if (email.value = '') {
+    if (!validateEmail()) {
       email.classList.remove('correct','error');
         email.classList.add('border');
     }
   }
 
   password.onblur = function() {
-    if (validatePassword() == false) {
+    if (!validatePassword()) {
       password.classList.remove('border', 'correct');
       password.classList.add('error');
       passwordMessage.style.visibility = 'visible'
@@ -53,8 +50,9 @@ window.onload = function() {
 
   password.onfocus = function() {
     passwordMessage.style.visibility = 'hidden'
-    if (validatePassword() == false) {
-      password.value = '';
+    if (!validatePassword()) {
+      password.classList.remove('correct','error');
+        password.classList.add('border');
     }
   }
 
