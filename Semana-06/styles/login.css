@@ -20,6 +20,7 @@ button {
   border: none;
 }
 
+
 #login-content {
   display: flex;
   flex-direction: column;
@@ -71,14 +72,7 @@ button {
   border: 0;
 }
 
-#message1 {
-  visibility: hidden;
-  text-transform: none;
-  font-size: 8px;
-  color: red;
-}
-
-#message2 {
+#message1, #message2 {
   visibility: hidden;
   text-transform: none;
   font-size: 8px;
