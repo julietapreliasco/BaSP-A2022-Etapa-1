@@ -11,31 +11,35 @@ window.onload = function() {
   var password = document.getElementById('password');
   var repeatPassword = document.getElementById('repeat-password');
 
-  var nameExpression = /^[a-zA-Z]{3,}$/;
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-  var passwordExpression = /^([a-zA-Z0-9]{8,})$/;
-  var dniExpression = /^[0-9]{7,}$/;
+  var alpha = 'áéíóúÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUWXYZ'
+  var alphaNumeric = 'áéíóúÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUWXYZ123456789'
+  var alphaNumericSpace = 'áéíóúÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUWXYZ123456789 '
+
+  // functions
 
   function validateFirstName() {
-    return nameExpression.test(firstName.value);
+    for (var i = 0; i < firstName.value.length; i++) {
+      if(!alpha.includes(firstName.value[i])) {
+        return false;
+      }
+    }
+    if(firstName.value.length < 4) {
+      return false;
+    }
+    return true;
   }
 
   function validateLastName() {
-    return nameExpression.test(lastName.value);
-  }
-
-  function validateEmail() {
-    return emailExpression.test(email.value);
-  }
-
-  function validatePassword() {
-    return passwordExpression.test(password.value);
-  }
-
-  function validateRepeatPassword() {
-    if (repeatPassword.value === password.value && repeatPassword.value !== '') {
-      return true;
+    for (var i = 0; i < lastName.value.length; i++) {
+      if(!alpha.includes(lastName.value[i])) {
+        return false;
+      }
     }
+    if(lastName.value.length < 4) {
+      return false;
+    }
+    return true;
   }
 
   function validateDni() {
@@ -44,8 +48,54 @@ window.onload = function() {
     }
   }
 
+  // function validateDateOfBirth() {
+  //
+  // }
+
   function validatePhoneNumber() {
     if (!isNaN(phoneNumber.value) && phoneNumber.value.length === 10) {
+      return true;
+    }
+  }
+
+  // function validateAddress()
+
+  function validateLocation() {
+    for (var i = 0; i < location.value.length; i++) {
+      if(!alphaNumericSpace.includes(location.value[i])) {
+        return false;
+      }
+    }
+    if(location.value.length < 4) {
+      return false;
+    }
+    return true;
+  }
+
+  function validatePostalCode() {
+    if (!isNaN(postalCode.value) && postalCode.value.length > 3 && postalCode.value.length < 6 ) {
+      return true;
+    }
+  }
+
+  function validateEmail() {
+    return emailExpression.test(email.value);
+  }
+
+  function validatePassword() {
+    for (var i = 0; i < password.value.length; i++) {
+      if(!alphaNumeric.includes(password.value[i])) {
+        return false;
+      }
+    }
+    if(password.value.length < 8) {
+      return false;
+    }
+    return true;
+  }
+
+  function validateRepeatPassword() {
+    if (repeatPassword.value === password.value && repeatPassword.value !== '') {
       return true;
     }
   }
@@ -137,6 +187,51 @@ window.onload = function() {
       phoneNumber.classList.add('border');
     }
   }
+
+    //lOCATION
+
+  location.onblur = function() {
+    if (!validateLocation()) {
+      location.classList.remove('border', 'correct');
+      location.classList.add('error');
+      document.getElementById('span-location').style.visibility = 'visible';
+    } else {
+      location.classList.remove('border','error');
+      location.classList.add('correct');
+      document.getElementById('span-location').style.visibility = 'hidden';
+    }
+  }
+
+  location.onfocus = function() {
+    document.getElementById('span-location').style.visibility = 'hidden';
+    if (!validateLocation()) {
+      location.classList.remove('correct','error');
+      location.classList.add('border');
+    }
+  }
+
+  // POSTAL CODE
+
+  postalCode.onblur = function() {
+    if (!validatePostalCode()) {
+      postalCode.classList.remove('border', 'correct');
+      postalCode.classList.add('error');
+      document.getElementById('span-postal-code').style.visibility = 'visible';
+    } else {
+        postalCode.classList.remove('border','error');
+        postalCode.classList.add('correct');
+        document.getElementById('span-postal-code').style.visibility = 'hidden';
+    }
+  }
+
+  postalCode.onfocus = function() {
+    document.getElementById('span-postal-code').style.visibility = 'hidden';
+    if (!validatePostalCode()) {
+      postalCode.classList.remove('correct','error');
+      postalCode.classList.add('border');
+    }
+  }
+
 
   // EMAIL
   email.onblur = function() {

@@ -5,15 +5,24 @@ window.onload = function() {
   var button = document.getElementById('button');
   var emailMessage = document.getElementById('message1');
   var passwordMessage = document.getElementById('message2');
+
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-  var passwordExpression = /^([a-zA-Z0-9]{8,})$/
+  var alphaNumeric = 'áéíóúÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUWXYZ123456789'
 
   function validateEmail() {
     return emailExpression.test(email.value);
   }
 
   function validatePassword() {
-    return passwordExpression.test(password.value);
+    for (var i = 0; i < password.value.length; i++) {
+      if(!alphaNumeric.includes(password.value[i])) {
+        return false;
+      }
+    }
+    if(password.value.length < 8) {
+      return false;
+    }
+    return true;
   }
 
   email.onblur = function() {
