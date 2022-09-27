@@ -6,7 +6,7 @@ window.onload = function() {
   var emailMessage = document.getElementById('message1');
   var passwordMessage = document.getElementById('message2');
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-  var passwordExpression = /^([a-zA-Z0-9]+)$/
+  var passwordExpression = /^([a-zA-Z0-9]{8,})$/
 
   function validateEmail() {
     return emailExpression.test(email.value);

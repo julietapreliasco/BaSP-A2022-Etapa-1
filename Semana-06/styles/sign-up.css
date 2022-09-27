@@ -72,7 +72,7 @@ button {
 }
 
 #span-first-name, #span-last-name, #span-dni, #span-date, #span-phone-number,
-#span-address, #span-location, #span-postal-code, #span-email, #span-password, #span-reset-password {
+#span-address, #span-location, #span-postal-code, #span-email, #span-password, #span-repeat-password {
   visibility: hidden;
   text-transform: none;
   font-size: 8px;
