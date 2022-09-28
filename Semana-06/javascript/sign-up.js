@@ -10,21 +10,22 @@ window.onload = function() {
   var email = document.getElementById('email');
   var password = document.getElementById('password');
   var repeatPassword = document.getElementById('repeat-password');
+  var button = document.getElementById('create-button');
 
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-  var alpha = 'áéíóúÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUWXYZ'
-  var alphaNumeric = 'áéíóúÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUWXYZ123456789'
-  var alphaNumericSpace = 'áéíóúÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUWXYZ123456789 '
-
-  // functions
+  var alpha = 'áéíóúÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
+  var numeric = '0123456789';
+  var alphaNumeric = 'áéíóúÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ123456789';
+  var alphaNumericSpace = 'áéíóúÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ123456789 ';
+  var space = ' ';
 
   function validateFirstName() {
     for (var i = 0; i < firstName.value.length; i++) {
-      if(!alpha.includes(firstName.value[i])) {
+      if (!alpha.includes(firstName.value[i])) {
         return false;
       }
     }
-    if(firstName.value.length < 4) {
+    if (firstName.value.length < 4) {
       return false;
     }
     return true;
@@ -36,7 +37,7 @@ window.onload = function() {
         return false;
       }
     }
-    if(lastName.value.length < 4) {
+    if (lastName.value.length < 4) {
       return false;
     }
     return true;
@@ -48,9 +49,11 @@ window.onload = function() {
     }
   }
 
-  // function validateDateOfBirth() {
-  //
-  // }
+  function validateDateOfBirth() {
+    if (dateOfBirth.value !== '') {
+      return true;
+    }
+  }
 
   function validatePhoneNumber() {
     if (!isNaN(phoneNumber.value) && phoneNumber.value.length === 10) {
@@ -58,15 +61,45 @@ window.onload = function() {
     }
   }
 
-  // function validateAddress()
+  function validateAddress() {
+    var alphaArray = []
+    var numArray = []
+
+    for (var i = 0; i < address.value.length; i++) {
+      if (!alphaNumericSpace.includes(address.value[i])) {
+        return false;
+      }
+
+      if (numeric.includes(address.value[i])) {
+        numArray.push[address.value[i]];
+      }
+
+      if (alpha.includes(address.value[i])) {
+        alphaArray.push[address.value[i]];
+      }
+    }
+    if (address.value.length < 5) {
+      return false;
+    }
+
+    if (alphaArray === 0 || alphaNumeric === 0) {
+      return false;
+    }
+
+    var splitedAddress = address.value.split(' ');
+    if (!splitedAddress[0] || !splitedAddress[1]) {
+      return false;
+    }
+    return true;
+  }
 
   function validateLocation() {
     for (var i = 0; i < location.value.length; i++) {
-      if(!alphaNumericSpace.includes(location.value[i])) {
+      if (!alphaNumericSpace.includes(location.value[i])) {
         return false;
       }
     }
-    if(location.value.length < 4) {
+    if (location.value.length < 4) {
       return false;
     }
     return true;
@@ -84,11 +117,11 @@ window.onload = function() {
 
   function validatePassword() {
     for (var i = 0; i < password.value.length; i++) {
-      if(!alphaNumeric.includes(password.value[i])) {
+      if (!alphaNumeric.includes(password.value[i])) {
         return false;
       }
     }
-    if(password.value.length < 8) {
+    if (password.value.length < 8) {
       return false;
     }
     return true;
@@ -100,29 +133,23 @@ window.onload = function() {
     }
   }
 
-  // FIRST NAME
-
   firstName.onblur = function() {
     if (!validateFirstName()) {
       firstName.classList.remove('border', 'correct');
       firstName.classList.add('error');
       document.getElementById('span-first-name').style.visibility = 'visible';
     } else {
-      firstName.classList.remove('border','error');
-      firstName.classList.add('correct');
-      document.getElementById('span-first-name').style.visibility = 'hidden';
+        firstName.classList.remove('border','error');
+        firstName.classList.add('correct');
+        document.getElementById('span-first-name').style.visibility = 'hidden';
     }
   }
 
   firstName.onfocus = function() {
     document.getElementById('span-first-name').style.visibility = 'hidden';
-    if (!validateFirstName()) {
-      firstName.classList.remove('correct','error');
-      firstName.classList.add('border');
-    }
+    firstName.classList.remove('correct','error');
+    firstName.classList.add('border');
   }
-
-  // LAST NAME
 
   lastName.onblur = function() {
     if (!validateLastName()) {
@@ -138,13 +165,9 @@ window.onload = function() {
 
   lastName.onfocus = function() {
     document.getElementById('span-last-name').style.visibility = 'hidden';
-    if (!validateLastName()) {
-      lastName.classList.remove('correct','error');
-      lastName.classList.add('border');
-    }
+    lastName.classList.remove('correct','error');
+    lastName.classList.add('border');
   }
-
-  // DNI
 
   dni.onblur = function() {
     if (!validateDni()) {
@@ -160,13 +183,27 @@ window.onload = function() {
 
   dni.onfocus = function() {
     document.getElementById('span-dni').style.visibility = 'hidden';
-    if (!validateDni()) {
-      dni.classList.remove('correct','error');
-      dni.classList.add('border');
+    dni.classList.remove('correct','error');
+    dni.classList.add('border');
+  }
+
+  dateOfBirth.onblur = function() {
+    if (!validateDateOfBirth()) {
+      dateOfBirth.classList.remove('border', 'correct');
+      dateOfBirth.classList.add('error');
+      document.getElementById('span-date').style.visibility = 'visible';
+    } else {
+        dateOfBirth.classList.remove('border','error');
+        dateOfBirth.classList.add('correct');
+        document.getElementById('span-date').style.visibility = 'hidden';
     }
   }
 
-  // PHONE NUMBER
+  dateOfBirth.onfocus = function() {
+    document.getElementById('span-date').style.visibility = 'hidden';
+    dateOfBirth.classList.remove('correct','error');
+    dateOfBirth.classList.add('border');
+  }
 
   phoneNumber.onblur = function() {
     if (!validatePhoneNumber()) {
@@ -182,13 +219,27 @@ window.onload = function() {
 
   phoneNumber.onfocus = function() {
     document.getElementById('span-phone-number').style.visibility = 'hidden';
-    if (!validatePhoneNumber()) {
-      phoneNumber.classList.remove('correct','error');
-      phoneNumber.classList.add('border');
+    phoneNumber.classList.remove('correct','error');
+    phoneNumber.classList.add('border');
+  }
+
+  address.onblur = function() {
+    if (!validateAddress()) {
+      address.classList.remove('border', 'correct');
+      address.classList.add('error');
+      document.getElementById('span-address').style.visibility = 'visible';
+    } else {
+        address.classList.remove('border','error');
+        address.classList.add('correct');
+        document.getElementById('span-address').style.visibility = 'hidden';
     }
   }
 
-    //lOCATION
+  address.onfocus = function() {
+    document.getElementById('span-address').style.visibility = 'hidden';
+    address.classList.remove('correct','error');
+    address.classList.add('border');
+  }
 
   location.onblur = function() {
     if (!validateLocation()) {
@@ -196,21 +247,17 @@ window.onload = function() {
       location.classList.add('error');
       document.getElementById('span-location').style.visibility = 'visible';
     } else {
-      location.classList.remove('border','error');
-      location.classList.add('correct');
-      document.getElementById('span-location').style.visibility = 'hidden';
+        location.classList.remove('border','error');
+        location.classList.add('correct');
+        document.getElementById('span-location').style.visibility = 'hidden';
     }
   }
 
   location.onfocus = function() {
     document.getElementById('span-location').style.visibility = 'hidden';
-    if (!validateLocation()) {
-      location.classList.remove('correct','error');
-      location.classList.add('border');
-    }
+    location.classList.remove('correct','error');
+    location.classList.add('border');
   }
-
-  // POSTAL CODE
 
   postalCode.onblur = function() {
     if (!validatePostalCode()) {
@@ -226,20 +273,15 @@ window.onload = function() {
 
   postalCode.onfocus = function() {
     document.getElementById('span-postal-code').style.visibility = 'hidden';
-    if (!validatePostalCode()) {
-      postalCode.classList.remove('correct','error');
-      postalCode.classList.add('border');
-    }
+    postalCode.classList.remove('correct','error');
+    postalCode.classList.add('border');
   }
 
-
-  // EMAIL
   email.onblur = function() {
     if (!validateEmail()) {
       email.classList.remove('border', 'correct');
       email.classList.add('error');
       document.getElementById('span-email').style.visibility = 'visible';
-
     } else {
         email.classList.remove('border','error');
         email.classList.add('correct');
@@ -249,13 +291,9 @@ window.onload = function() {
 
   email.onfocus = function() {
     document.getElementById('span-email').style.visibility = 'hidden';
-    if (!validateEmail()) {
-      email.classList.remove('correct','error');
-      email.classList.add('border');
-    }
+    email.classList.remove('correct','error');
+    email.classList.add('border');
   }
-
-  //PASSWORD
 
   password.onblur = function() {
     if (!validatePassword()) {
@@ -271,31 +309,104 @@ window.onload = function() {
 
   password.onfocus = function() {
     document.getElementById('span-password').style.visibility = 'hidden';
-    if (!validatePassword()) {
-      password.classList.remove('correct','error');
-      password.classList.add('border');
-    }
+    password.classList.remove('correct','error');
+    password.classList.add('border');
   }
-
-  // REPEAT PASSWORD
 
   repeatPassword.onblur = function() {
     if (!validateRepeatPassword()) {
       repeatPassword.classList.remove('border', 'correct');
       repeatPassword.classList.add('error');
       document.getElementById('span-repeat-password').style.visibility = 'visible';
-  } else {
-      repeatPassword.classList.remove('border','error');
-      repeatPassword.classList.add('correct');
-      document.getElementById('span-repeat-password').style.visibility = 'hidden';
+    } else {
+        repeatPassword.classList.remove('border','error');
+        repeatPassword.classList.add('correct');
+        document.getElementById('span-repeat-password').style.visibility = 'hidden';
     }
   }
 
   repeatPassword.onfocus = function() {
     document.getElementById('span-repeat-password').style.visibility = 'hidden';
-    if (!validateRepeatPassword()) {
-      repeatPassword.classList.remove('correct','error');
-      repeatPassword.classList.add('border');
-    }
+    repeatPassword.classList.remove('correct','error');
+    repeatPassword.classList.add('border');
   }
+
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+    var errorAlert = [];
+    var error = false;
+
+    if (!validateFirstName()) {
+      errorAlert.push('Invalid first name\n');
+      error = true;
+    }
+
+    if (!validateLastName()) {
+      errorAlert.push('Invalid last name\n');
+      error = true;
+    }
+
+    if (!validateDni()) {
+      errorAlert.push('Invalid dni\n');
+      error = true;
+    }
+
+    if (!validateDateOfBirth()) {
+      errorAlert.push('Invalid date of birth\n');
+      error = true;
+    }
+
+    if (!validatePhoneNumber()) {
+      errorAlert.push('Invalid phone number\n');
+      error = true;
+    }
+
+    if (!validateAddress()) {
+      errorAlert.push('Invalid address\n');
+      error = true;
+    }
+
+    if (!validateLocation()) {
+      errorAlert.push('Invalid location\n');
+      error = true;
+    }
+
+    if (!validatePostalCode()) {
+      errorAlert.push('Invalid postal code\n');
+      error = true;
+    }
+
+    if (!validateEmail()) {
+      errorAlert.push('Invalid email\n');
+      error = true;
+    }
+
+    if (!validatePassword()) {
+      errorAlert.push('Invalid password\n');
+      error = true;
+    }
+
+    if (!validateRepeatPassword()) {
+      errorAlert.push('Invalid password check\n');
+      error = true;
+    }
+
+    if (error) {
+      alert(errorAlert);
+      return false;
+
+    } else {
+      alert('Name: ' + firstName.value +
+      '\nLast name: ' + lastName.value +
+      '\nDNI: ' + dni.value +
+      '\nDate of birth: ' + dateOfBirth.value +
+      '\nAddress: ' + address.value +
+      '\nPhone: ' + phoneNumber.value +
+      '\nLocation: ' + location.value +
+      '\nPostal Code: ' + postalCode.value +
+      '\nEmail: ' + email.value +
+      '\nPassword: ' + password.value +
+      '\nRepeat Password: ' + repeatPassword.value);
+    }
+  })
 }

@@ -64,11 +64,11 @@ button {
 }
 
 .input .error {
-  border-bottom: 1px solid red;
+  border-bottom: 2px solid red;
 }
 
 .input .correct {
-  border-bottom: 1px solid green;
+  border-bottom: 2px solid green;
 }
 
 #span-first-name, #span-last-name, #span-dni, #span-date, #span-phone-number,

@@ -7,7 +7,7 @@ window.onload = function() {
   var passwordMessage = document.getElementById('message2');
 
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-  var alphaNumeric = 'áéíóúÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUWXYZ123456789'
+  var alphaNumeric = 'áéíóúÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUWXYZ123456789';
 
   function validateEmail() {
     return emailExpression.test(email.value);
@@ -15,11 +15,11 @@ window.onload = function() {
 
   function validatePassword() {
     for (var i = 0; i < password.value.length; i++) {
-      if(!alphaNumeric.includes(password.value[i])) {
+      if (!alphaNumeric.includes(password.value[i])) {
         return false;
       }
     }
-    if(password.value.length < 8) {
+    if (password.value.length < 8) {
       return false;
     }
     return true;
@@ -33,16 +33,14 @@ window.onload = function() {
     } else {
         email.classList.remove('border','error');
         email.classList.add('correct');
-        emailMessage.style.visibility = 'hidden'
+        emailMessage.style.visibility = 'hidden';
     }
   }
 
   email.onfocus = function() {
     emailMessage.style.visibility = 'hidden'
-    if (!validateEmail()) {
-      email.classList.remove('correct','error');
-        email.classList.add('border');
-    }
+    email.classList.remove('correct','error');
+    email.classList.add('border');
   }
 
   password.onblur = function() {
@@ -59,10 +57,8 @@ window.onload = function() {
 
   password.onfocus = function() {
     passwordMessage.style.visibility = 'hidden'
-    if (!validatePassword()) {
-      password.classList.remove('correct','error');
-        password.classList.add('border');
-    }
+    password.classList.remove('correct','error');
+    password.classList.add('border');
   }
 
   button.addEventListener('click', function(e) {
@@ -72,9 +68,9 @@ window.onload = function() {
     } else if (!validateEmail() && validatePassword()){
         alert('Email is not valid')
     } else if (validateEmail() && !validatePassword()) {
-        alert('Password is not valid')
+        alert('Password is not valid');
     } else {
-        alert('Email and password not valid')
+        alert('Email and password not valid');
     }
   })
 }

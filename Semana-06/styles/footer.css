@@ -2,16 +2,21 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: 80%;
-  margin-top: 50%;
-  background-color: #DDDDE5;
+  height: 100%;
+  margin-top: 0;
+  background-color: #dfdfdf;
 }
 
 .first-container-footer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
   height: 30%;
+}
+
+.products, .business, .support {
+  padding: 5%;
 }
 
 footer h3 {
@@ -83,7 +88,6 @@ footer h3 {
 
 @media (min-width: 1024px) {
   footer {
-    margin-top: 20%;
     margin-left: 300px;
   }
 
