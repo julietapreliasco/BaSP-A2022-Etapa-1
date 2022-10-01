@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  line-height: 18px;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+span {
+  font-weight: 700;
+}
+
+section {
+  margin-top: 50%;
+}
+
+p {
+  color: rgb(0, 0, 0, 0.7);
+  font-size: 20px;
+  line-height: 23px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+@media (min-width: 1024px) {
+  section {
+    margin-top: 10%;
+  }
+}
