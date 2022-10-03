@@ -75,7 +75,7 @@ window.onload = function() {
         } else {
             var errroMsg = []
             for (var i = 0; i < data.errors.length; i++) {
-              errroMsg.push(data.errors[i].msg);
+              errroMsg.push('Error: ' + data.errors[i].msg);
             }
             alert(errroMsg.join('\n'));
         }
@@ -84,6 +84,15 @@ window.onload = function() {
         console.log(error);
       })
 
+    if (validateEmail() && validatePassword()) {
+      alert('Email: ' + email.value + '\nPassword: ' + password.value);
+    } else if (!validateEmail() && validatePassword()){
+        alert('Email is not valid')
+    } else if (validateEmail() && !validatePassword()) {
+        alert('Password is not valid');
+    } else {
+        alert('Email and password not valid');
+    }
   })
 
 }

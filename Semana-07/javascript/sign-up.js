@@ -48,11 +48,25 @@ window.onload = function() {
     }
   }
 
+  function calculateAge(date) {
+    var today = new Date();
+    var birthDate = new Date(date);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var month  = today.getMonth() - birthDate.getMonth();
+    if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+  }
+
   function validateDateOfBirth() {
-    if (dateOfBirth.value !== '') {
-      return true;
+    if(calculateAge(dateOfBirth.value) < 18 || dateOfBirth.value == '') {
+        return false
+    } else {
+        return true
     }
   }
+
 
   function validatePhoneNumber() {
     if (!isNaN(phoneNumber.value) && phoneNumber.value.length === 10) {
@@ -94,7 +108,7 @@ window.onload = function() {
 
   function validateLocation() {
     for (var i = 0; i < location.value.length; i++) {
-      if (!alphaNumericSpace.includes(location.value[i])) {
+      if (!alpha.includes(location.value[i])) {
         return false;
       }
     }
@@ -385,7 +399,7 @@ window.onload = function() {
         } else {
             var errroMsg = []
             for (var i = 0; i < data.errors.length; i++) {
-              errroMsg.push(data.errors[i].msg);
+              errroMsg.push('Error: ' + data.errors[i].msg);
             }
             alert(errroMsg.join('\n'));
         }
@@ -393,5 +407,81 @@ window.onload = function() {
       .catch(function(error) {
         console.log(error);
       })
+
+    var errorAlert = [];
+    var error = false;
+
+    if (!validateFirstName()) {
+      errorAlert.push('Invalid first name\n');
+      error = true;
+    }
+
+    if (!validateLastName()) {
+      errorAlert.push('Invalid last name\n');
+      error = true;
+    }
+
+    if (!validateDni()) {
+      errorAlert.push('Invalid dni\n');
+      error = true;
+    }
+
+    if (!validateDateOfBirth()) {
+      errorAlert.push('Invalid date of birth\n');
+      error = true;
+    }
+
+    if (!validatePhoneNumber()) {
+      errorAlert.push('Invalid phone number\n');
+      error = true;
+    }
+
+    if (!validateAddress()) {
+      errorAlert.push('Invalid address\n');
+      error = true;
+    }
+
+    if (!validateLocation()) {
+      errorAlert.push('Invalid location\n');
+      error = true;
+    }
+
+    if (!validatePostalCode()) {
+      errorAlert.push('Invalid postal code\n');
+      error = true;
+    }
+
+    if (!validateEmail()) {
+      errorAlert.push('Invalid email\n');
+      error = true;
+    }
+
+    if (!validatePassword()) {
+      errorAlert.push('Invalid password\n');
+      error = true;
+    }
+
+    if (!validateRepeatPassword()) {
+      errorAlert.push('Invalid password check\n');
+      error = true;
+    }
+
+    if (error) {
+      alert(errorAlert);
+      return false;
+
+    } else {
+      alert('Name: ' + firstName.value +
+      '\nLast name: ' + lastName.value +
+      '\nDNI: ' + dni.value +
+      '\nDate of birth: ' + dateOfBirth.value +
+      '\nAddress: ' + address.value +
+      '\nPhone: ' + phoneNumber.value +
+      '\nLocation: ' + location.value +
+      '\nPostal Code: ' + postalCode.value +
+      '\nEmail: ' + email.value +
+      '\nPassword: ' + password.value +
+      '\nRepeat Password: ' + repeatPassword.value);
+    }
   })
 }
