@@ -73,8 +73,11 @@ window.onload = function() {
           var jsonToString = JSON.stringify(data.msg);
           alert(jsonToString + '\n' + 'Email: ' + email.value + '\n' + 'Password: ' + password.value);
         } else {
-            var errorMsg = JSON.stringify(data.errors[0].msg);
-            alert(errorMsg);
+            var errroMsg = []
+            for (var i = 0; i < data.errors.length; i++) {
+              errroMsg.push(data.errors[i].msg);
+            }
+            alert(errroMsg.join('\n'));
         }
       })
       .catch(function(error) {
@@ -82,9 +85,5 @@ window.onload = function() {
       })
 
   })
-
-
-
-
 
 }
