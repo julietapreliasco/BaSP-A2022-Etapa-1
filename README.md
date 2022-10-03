@@ -19,9 +19,14 @@
 - Link to github pages: https://julietapreliasco.github.io/BaSP-A2022-Etapa-1/Semana-04/
 
 ### Week 06:
--Structure, styles, logic and functionalities added to login and sign up sections using CSS, HTML and Javascript.
--Link to Login in github pages: https://julietapreliasco.github.io/BaSP-A2022-Etapa-1/Semana-06/views/login.html
--Link to Sign up in github pages: https://julietapreliasco.github.io/BaSP-A2022-Etapa-1/Semana-06/views/sign-up.html
--Link to Landing in github pages: https://julietapreliasco.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html
+- Structure, styles, logic and functionalities added to login and sign up sections using CSS, HTML and Javascript.
+- Link to login in github pages: https://julietapreliasco.github.io/BaSP-A2022-Etapa-1/Semana-06/views/login.html
+- Link to sign up in github pages: https://julietapreliasco.github.io/BaSP-A2022-Etapa-1/Semana-06/views/sign-up.html
+- Link to landing in github pages: https://julietapreliasco.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html
+
+### Week 07:
+- The data previously validated is now sent to a web server using a fetch request, data from the sign up section form is saved to local storage.
+- Link to login in github pages: https://julietapreliasco.github.io/BaSP-A2022-Etapa-1/Semana-07/views/login.html
+- Link to sign up in github pages: https://julietapreliasco.github.io/BaSP-A2022-Etapa-1/Semana-07/views/sign-up.html
 
 _By Julieta Preliasco Benítez_

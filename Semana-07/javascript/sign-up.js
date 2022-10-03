@@ -61,9 +61,9 @@ window.onload = function() {
 
   function validateDateOfBirth() {
     if(calculateAge(dateOfBirth.value) < 18 || dateOfBirth.value == '') {
-        return false
+        return false;
     } else {
-        return true
+        return true;
     }
   }
 
@@ -75,8 +75,8 @@ window.onload = function() {
   }
 
   function validateAddress() {
-    var alphaArray = []
-    var numArray = []
+    var alphaArray = [];
+    var numArray = [];
 
     for (var i = 0; i < address.value.length; i++) {
       if (!alphaNumericSpace.includes(address.value[i])) {
@@ -355,7 +355,6 @@ window.onload = function() {
     postalCode.value = localStorage.getItem('Postal Code');
     email.value = localStorage.getItem('Email');
     password.value = localStorage.getItem('Password');
-
   }
 
   button.addEventListener('click', function(e) {
@@ -373,9 +372,9 @@ window.onload = function() {
     email.value + '&password=' + password.value;
 
     var alertValues = 'Name: '+ firstName.value + '\n' + 'Last Name: '+ lastName.value + '\n' + 'DNI: '+ dni.value + '\n'+
-    'Date of Birth: '+ dateOfBirthValue + '\n' + 'Phone: '+ phoneNumber.value + '\n'+ 'Address: ' + address.value + '\n' +
-    'Location: ' + location.value + '\n' + 'Postal Code: ' + postalCode.value + '\n' + 'Email: ' + email.value + '\n' +
-    'Password: ' + password.value;
+    'Date of Birth: '+ dateOfBirthValue + '\n' + 'Phone: '+ phoneNumber.value + '\n'+ 'Address: '
+    + address.value + '\n' + 'Location: ' + location.value + '\n' + 'Postal Code: ' +
+    postalCode.value + '\n' + 'Email: ' + email.value + '\n' + 'Password: ' + password.value;
 
     fetch(url)
       .then(function(response) {
