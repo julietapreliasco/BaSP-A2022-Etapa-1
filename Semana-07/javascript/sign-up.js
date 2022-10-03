@@ -341,7 +341,7 @@ window.onload = function() {
     postalCode.value = localStorage.getItem('Postal Code');
     email.value = localStorage.getItem('Email');
     password.value = localStorage.getItem('Password');
-    repeatPassword.value = localStorage.getItem('Repeat password');
+
   }
 
   button.addEventListener('click', function(e) {
@@ -379,7 +379,6 @@ window.onload = function() {
           localStorage.setItem('Postal Code', postalCode.value);
           localStorage.setItem('Email', email.value);
           localStorage.setItem('Password', password.value);
-          localStorage.setItem('Repeat password', repeatPassword.value);
 
           var dataToString = JSON.stringify(data.msg);
           alert(dataToString + '\n' + alertValues);
