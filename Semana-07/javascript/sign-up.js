@@ -15,9 +15,8 @@ window.onload = function() {
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
   var alpha = 'áéíóúÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
   var numeric = '0123456789';
-  var alphaNumeric = 'áéíóúÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ123456789';
-  var alphaNumericSpace = 'áéíóúÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ123456789 ';
-  var space = ' ';
+  var alphaNumeric = 'áéíóúÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789';
+  var alphaNumericSpace = 'áéíóúÁÉÍÓÚabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789 ';
 
   function validateFirstName() {
     for (var i = 0; i < firstName.value.length; i++) {
@@ -331,82 +330,47 @@ window.onload = function() {
     repeatPassword.classList.add('border');
   }
 
+
   button.addEventListener('click', function(e) {
     e.preventDefault();
-    var errorAlert = [];
-    var error = false;
 
-    if (!validateFirstName()) {
-      errorAlert.push('Invalid first name\n');
-      error = true;
-    }
+    var dateOfBirthValue = dateOfBirth.value
+    var yyyy = dateOfBirth.value.substring(0,4);
+    var mm = dateOfBirth.value.substring(5,7);
+    var dd = dateOfBirth.value.substring(8,10);
+    dateOfBirthValue = mm + '/' + dd + '/' + yyyy;
 
-    if (!validateLastName()) {
-      errorAlert.push('Invalid last name\n');
-      error = true;
-    }
+    var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup' + '?name=' + firstName.value + '&lastName='
+    + lastName.value + '&dni=' + dni.value + '&dob=' + dateOfBirthValue + '&phone=' + phoneNumber.value +
+    '&address=' + address.value + '&city=' + location.value + '&zip=' + postalCode.value + '&email=' +
+    email.value + '&password=' + password.value
 
-    if (!validateDni()) {
-      errorAlert.push('Invalid dni\n');
-      error = true;
-    }
+    var alertValues = 'Name: '+ firstName.value + '\n' + 'Last Name: '+ lastName.value + '\n' + 'DNI: '+ dni.value + '\n'+
+    'Date of Birth: '+ dateOfBirthValue + '\n' + 'Phone: '+ phoneNumber.value + '\n'+ 'Address: ' + address.value + '\n' +
+    'Location: ' + location.value + '\n' + 'Postal Code: ' + postalCode.value + '\n' + 'Email: ' + email.value + '\n' +
+    'Password: ' + password.value;
 
-    if (!validateDateOfBirth()) {
-      errorAlert.push('Invalid date of birth\n');
-      error = true;
-    }
+    fetch(url)
+      .then(function(response) {
+        return(response.json());
+      })
+      .then(function(data) {
+        if (data.success == true) {
+          var dataToString = JSON.stringify(data.msg);
+          alert(dataToString + '\n' + alertValues)
+        } else {
+            var errroMsg = []
+            for (var i = 0; i < data.errors.length; i++) {
+              errroMsg.push(data.errors[i].msg);
+            }
+            alert(errroMsg.join('\n'));
+        }
+      })
+      .catch(function(error) {
+        console.log(error)
+      })
 
-    if (!validatePhoneNumber()) {
-      errorAlert.push('Invalid phone number\n');
-      error = true;
-    }
 
-    if (!validateAddress()) {
-      errorAlert.push('Invalid address\n');
-      error = true;
-    }
-
-    if (!validateLocation()) {
-      errorAlert.push('Invalid location\n');
-      error = true;
-    }
-
-    if (!validatePostalCode()) {
-      errorAlert.push('Invalid postal code\n');
-      error = true;
-    }
-
-    if (!validateEmail()) {
-      errorAlert.push('Invalid email\n');
-      error = true;
-    }
-
-    if (!validatePassword()) {
-      errorAlert.push('Invalid password\n');
-      error = true;
-    }
-
-    if (!validateRepeatPassword()) {
-      errorAlert.push('Invalid password check\n');
-      error = true;
-    }
-
-    if (error) {
-      alert(errorAlert);
-      return false;
-
-    } else {
-      alert('Name: ' + firstName.value +
-      '\nLast name: ' + lastName.value +
-      '\nDNI: ' + dni.value +
-      '\nDate of birth: ' + dateOfBirth.value +
-      '\nAddress: ' + address.value +
-      '\nPhone: ' + phoneNumber.value +
-      '\nLocation: ' + location.value +
-      '\nPostal Code: ' + postalCode.value +
-      '\nEmail: ' + email.value +
-      '\nPassword: ' + password.value +
-      '\nRepeat Password: ' + repeatPassword.value);
-    }
+    localStorage.setItem('name')
   })
 }
