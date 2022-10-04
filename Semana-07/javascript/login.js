@@ -63,26 +63,6 @@ window.onload = function() {
 
   button.addEventListener('click', function(e) {
     e.preventDefault();
-    var url = 'https://basp-m2022-api-rest-server.herokuapp.com/' + 'login?email=' + email.value + '&password=' + password.value;
-    fetch(url)
-      .then(function (response) {
-        return(response.json());
-      })
-      .then(function(data) {
-        if(data.success == true) {
-          var jsonToString = JSON.stringify(data.msg);
-          alert(jsonToString + '\n' + 'Email: ' + email.value + '\n' + 'Password: ' + password.value);
-        } else {
-            var errroMsg = []
-            for (var i = 0; i < data.errors.length; i++) {
-              errroMsg.push('Error: ' + data.errors[i].msg);
-            }
-            alert(errroMsg.join('\n'));
-        }
-      })
-      .catch(function(error) {
-        console.log(error);
-      })
 
     if (validateEmail() && validatePassword()) {
       alert('Email: ' + email.value + '\nPassword: ' + password.value);
@@ -92,6 +72,31 @@ window.onload = function() {
         alert('Password is not valid');
     } else {
         alert('Email and password not valid');
+    }
+
+    var url = 'https://basp-m2022-api-rest-server.herokuapp.com/' + 'login?email=' + email.value + '&password=' + password.value;
+    if (validateEmail() && validatePassword()) {
+      fetch(url)
+        .then(function (response) {
+          return(response.json());
+        })
+        .then(function(data) {
+          if(data.success == true) {
+            var jsonToString = JSON.stringify(data.msg);
+            alert(jsonToString + '\n' + 'Email: ' + email.value + '\n' + 'Password: ' + password.value);
+          } else if (!data.success) {
+              alert(data.msg);
+          } else {
+              var errroMsg = [];
+              for (var i = 0; i < data.errors.length; i++) {
+                errroMsg.push('Error: ' + data.errors[i].msg);
+              }
+              alert(errroMsg.join('\n'));
+          }
+        })
+        .catch(function(error) {
+          console.log(error);
+        })
     }
   })
 
